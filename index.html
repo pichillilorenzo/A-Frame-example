@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <a-scene stats>
+
+      <a-camera position="0 4 4">
+        <a-entity cursor="fuse: true; fuseTimeout: 500"
+            position="0 0 -2"
+            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+            material="color: #2196F3; shader: flat">
+      </a-camera>
+
+      <a-entity light="type: spot; castShadow: true; intensity: 1;" position="0 10 100"></a-entity>
+      <a-entity light="type: spot; angle: 20; castShadow: true; intensity: .7;" animation-move='path: [ {"position": {"x": 0, "y": 0, "z": 1}, "rotation": {"x": 35, "y": -15, "z": 1}}, {"position": {"x": -10, "y": 0, "z": 1}, "rotation": {"x": 35, "y": -35, "z": 0}}, {"position": {"x": -10, "y": 25, "z": 1.5}, "rotation": {"x": -35, "y": -25, "z": 1}}, {"position": {"x": 10, "y": 25, "z": 1.5}, "rotation": {"x": -35, "y": 30, "z": 1}}, {"position": {"x": 10, "y": 0  , "z": 1}, "rotation": {"x": 30, "y": 35, "z": 1}} ]; animationStepTime: 3000'></a-entity>
+
+      <a-assets>
+        <a-asset-item id="model" src="./models/Geometria.gltf"></a-asset-item>
+      </a-assets>
+      <a-text value="Facciata della Chiesa di Santa Margherita" align="center" position="0 30 -7" color="#000" width="30" look-at-camera>
+      </a-text>
+      <a-entity position="-20.140 0.51 -8" rotation="-90 0 0" gltf-model="#model" shadow="cast: true;"></a-entity>
+      
+      <a-text class="sign" highlight show-history follow-camera="offset: -5 3 -2;" rotation="0 80 0" value="Guarda qui per conoscere la sua storia" align="center">
+        <a-plane color="#000" width="5"></a-plane>
+      </a-text>
+      <a-text class="sign" highlight follow-camera="offset: -5 1 -2;" rotation="0 80 0" value="Guarda qui per salire" move-camera="position: 0 0.1 0;" align="center">
+        <a-plane color="#000" width="3"></a-plane>
+      </a-text>
+      <a-text class="sign" highlight follow-camera="offset: -5 -1 -2;" rotation="0 80 0" value="Guarda qui per scendere" move-camera="position: 0 -0.1 0;" align="center">
+        <a-plane color="#000" width="3"></a-plane>
+      </a-text>
+      <a-text class="sign" highlight follow-camera="offset: 5 1 -2;" rotation="0 -80 0" value="Guarda qui per allontanarti" move-camera="position: 0 0 0.1;" align="center">
+        <a-plane color="#000" width="3"></a-plane>
+      </a-text>
+      <a-text class="sign" highlight follow-camera="offset: 5 -1 -2;" rotation="0 -80 0" value="Guarda qui per avvicinarti" move-camera="position: 0 0 -0.1;" align="center">
+        <a-plane color="#000" width="3"></a-plane>
+      </a-text>
+
+      <a-text class="history" visible="false" look-at-camera position="0 4 -4" follow-camera="offset: 0 0 -6;" value="" align="center">
+        <a-plane color="#000" width="6" height="6.5" position="0 0 -.1" basic-material>
+          <a-text go-forward-history visible="false" value="Avanti" align="center" position="2 -2.8 .2" width="5">
+            <a-plane color="#F44336" width=".8" height=".5" basic-material>
+          </a-text>
+          <a-text hide-history value="Esci" align="center" position="0 -2.8 .2" width="5">
+            <a-plane color="#F44336" width=".8" height=".5" basic-material>
+          </a-text>
+          <a-text go-backward-history visible="false" value="Indietro" align="center" position="-2 -2.8 .2" width="5">
+            <a-plane color="#F44336" width=".8" height=".5" basic-material>
+          </a-text>
+        </a-plane>
+      </a-text> 
+
+      <a-circle position="0 0 -10" rotation="-90 0 0" radius="90" shadow="receive: true;"></a-circle>
+
+      <a-sky color="#ececec"></a-sky>
+
+    </a-scene>
+
+  </body>
+</html>
