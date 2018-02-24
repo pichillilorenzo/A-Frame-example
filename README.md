@@ -17,14 +17,29 @@ A-Frame compontents defined in `main.js` are:
 ```html
 <a-entity 
   light="type: spot; angle: 20; castShadow: true; intensity: .7;" 
-  animation-move='path: [ {"position": {"x": 0, "y": 0, "z": 1}, "rotation": {"x": 35, "y": -15, "z": 1}}, {"position": {"x": -10, "y": 0, "z": 1}, "rotation": {"x": 35, "y": -35, "z": 0}}, {"position": {"x": -10, "y": 25, "z": 1.5}, "rotation": {"x": -35, "y": -25, "z": 1}}, {"position": {"x": 10, "y": 25, "z": 1.5}, "rotation": {"x": -35, "y": 30, "z": 1}}, {"position": {"x": 10, "y": 0  , "z": 1}, "rotation": {"x": 30, "y": 35, "z": 1}} ]; animationStepTime: 3000'>
+  animation-move='path: [ 
+    {"position": {"x": 0, "y": 0, "z": 1}, "rotation": {"x": 35, "y": -15, "z": 1}}, 
+    {"position": {"x": -10, "y": 0, "z": 1}, "rotation": {"x": 35, "y": -35, "z": 0}}, 
+    {"position": {"x": -10, "y": 25, "z": 1.5}, "rotation": {"x": -35, "y": -25, "z": 1}}, 
+    {"position": {"x": 10, "y": 25, "z": 1.5}, "rotation": {"x": -35, "y": 30, "z": 1}}, 
+    {"position": {"x": 10, "y": 0  , "z": 1}, "rotation": {"x": 30, "y": 35, "z": 1}} 
+  ]; animationStepTime: 3000'>
 </a-entity>
 ```
 - highlight: highlight a panel when the user is looking at it.
 - move-camera: will move the camera without using the keyboard when an user will look at the entity using this attribute. Example:
 ```html
-<a-text class="sign" highlight follow-camera="offset: -5 1 -2;" rotation="0 80 0" value="Look here to go up" move-camera="position: 0 0.1 0;" align="center">
+<a-text 
+  class="sign" 
+  highlight 
+  follow-camera="offset: -5 1 -2;" 
+  rotation="0 80 0" 
+  value="Look here to go up" 
+  move-camera="position: 0 0.1 0;" 
+  align="center">
+
   <a-plane color="#000" width="3"></a-plane>
+  
 </a-text>
 ```
 When an user will look at it, the camera will move along the y axis by 0.1 each second, and 0 on the x and z axis.
